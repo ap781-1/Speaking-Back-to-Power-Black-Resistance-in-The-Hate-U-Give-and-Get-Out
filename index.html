@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>double feature · The Hate U Give & Get Out</title>
+    <!-- fonts: clean serif / sans mix -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,450;8..60,600&family=Inter:opsl,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <!-- font awesome icons (subtle) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f5f1eb; /* warm neutral */
+            color: #20262c;
+            font-family: 'Source Serif 4', serif;
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+        }
+        .blog-container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.05), 0 8px 18px rgba(0,0,0,0.02);
+            padding: 3.2rem 3rem;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0.8rem; }
+            .blog-container { padding: 2rem 1.5rem; }
+        }
+
+        /* headings */
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 650;
+            font-size: 2.8rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            color: #141b24;
+        }
+        .subhead {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.3rem;
+            color: #635d55;
+            border-left: 5px solid #b48b6e;
+            padding-left: 1.4rem;
+            margin: 0.6rem 0 2rem 0;
+        }
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 550;
+            font-size: 2rem;
+            margin: 2.8rem 0 1.2rem 0;
+            letter-spacing: -0.01em;
+            color: #2b3a47;
+            border-bottom: 2px solid #e0d6cc;
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 520;
+            font-size: 1.5rem;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #3a4c5c;
+        }
+
+        /* paragraph */
+        p {
+            margin-bottom: 1.6rem;
+            text-align: left;
+        }
+
+        /* intro dropcap (first paragraph) */
+        .intro::first-letter {
+            font-size: 4rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.65rem;
+            color: #a86844;
+            font-weight: 500;
+            font-family: 'Source Serif 4', serif;
+        }
+
+        /* concept highlight */
+        .concept {
+            background: #ede7e0;
+            font-weight: 450;
+            padding: 0.15rem 0.45rem;
+            border-radius: 6px;
+            font-style: italic;
+            color: #2b3e4f;
+        }
+
+        /* blockquote style for citations / hooks */
+        blockquote {
+            font-family: 'Inter', sans-serif;
+            background: #f7f1ea;
+            padding: 1.8rem 2.2rem;
+            border-radius: 30px 30px 30px 10px;
+            margin: 2.2rem 0;
+            border-left: 8px solid #b48a6a;
+            color: #2b2b27;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        blockquote p {
+            margin-bottom: 0.6rem;
+            font-size: 1.18rem;
+        }
+        blockquote footer {
+            font-size: 0.95rem;
+            color: #735f4f;
+            margin-top: 0.8rem;
+            text-align: right;
+            font-style: italic;
+        }
+
+        /* pull quote (shorter emphasis) */
+        .pull-quote {
+            font-size: 1.45rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #503f31;
+            background: #f2ece5;
+            padding: 1.6rem 2rem;
+            border-radius: 40px;
+            margin: 2rem 0;
+            border-left: 6px solid #c1a187;
+        }
+        .pull-quote i {
+            color: #8f735b;
+            margin-right: 0.5rem;
+        }
+
+        /* footnote / reference call */
+        .footnote-ref {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            vertical-align: super;
+            color: #a65627;
+            font-weight: 500;
+            margin-left: 2px;
+        }
+        .ref-block {
+            font-size: 0.95rem;
+            border-top: 1px solid #dbcfc3;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            font-family: 'Inter', sans-serif;
+            color: #3f3b36;
+        }
+        .ref-block h4 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: #7b614d;
+        }
+        .ref-block p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .byline {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #7a6d61;
+            margin-top: -0.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .byline i {
+            color: #b18d71;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ccbcae, transparent);
+            margin: 2.5rem 0;
+        }
+
+        /* film titles in smallcaps / subtle */
+        .film-title {
+            font-weight: 600;
+            font-style: italic;
+            color: #3d291e;
+        }
+
+        .fa-star, .fa-star-half-alt {
+            color: #c57f4a;
+        }
+    </style>
+</head>
+<body>
+<div class="blog-container">
+
+    <!-- header -->
+    <h1>Review: <span class="film-title">The Hate U Give</span> & <span class="film-title">Get Out</span></h1>
+    <div class="subhead">race · identity · power · and the frames we watch through</div>
+    <div class="byline">
+        <i class="fas fa-film"></i> <span>essay on double feature</span>
+        <span style="flex:1; text-align:right;"><i class="far fa-calendar-alt"></i> 2026 · critical lens</span>
+    </div>
+
+    <!-- intro -->
+    <p class="intro">For someone who was distinctly oblivious from the "yoke" of the two so‑called binaries, I may be quite unjust to argue on such a topic, for never before (this) did I watch any form of media through the lens of gender, race or other social identity, nor have I been in close approximation to such situations.</p>
+
+    <!-- get out section -->
+    <h2><i class="fas fa-eye" style="font-size:1.8rem; margin-right:10px; color:#a65627;"></i> <span class="film-title">Get Out</span> (Jordan Peele, 2017)</h2>
+    <p>Jordan Peele's directorial, <span class="film-title">Get Out</span>, is a satirical representation of liberal racism where Chris (Starring Daniel Kaluuya), a black man, in his visit to his Caucasian girlfriend's parents, finds himself trapped in a despicable scenario. The movie progresses with some eye‑scratching scenes and a blunt ending. The inconsistent but brutal nature of violence may seem staggering. From bashing with blunt objects, stabbing, and blood bath—to that of a gory surgery scene and a deer that's hit by a car and shown helpless—the movie outclasses different genres: mystery‑suspense, thriller and 'horror'. The thematic acclaim is somewhat blurred with the over‑powering social agenda, as suspense turns into a divulgence. But, to the actors' credit, the high‑powered performance of the ensembled cast ensures unperturbed engagement with the film's plot. "When I decided to write this movie, I was stricken by the fact that we're in a time where we fear the other," says Peele in one interview.<span class="footnote-ref">(Lopez 2017)</span></p>
+
+    <!-- the hate u give section -->
+    <h2><i class="fas fa-fist-raised" style="font-size:1.8rem; margin-right:10px; color:#a65627;"></i> <span class="film-title">The Hate U Give</span> (George Tillman Jr., 2018)</h2>
+    <p><span class="film-title">The Hate U Give</span>, directed by George Tillman Jr., is an adaptation of Angie Thomas's 2017 novel of the same name. The protagonist Starr Carter (played by Amandla Stenberg), initially, seems comfortable switching between her two versions—her original and the other—until she witnesses the fatal shooting of her childhood friend, Khalil (played by Algee Smith), by a police officer. Starr then has to face all the obstacles to find her true identity and stand for what's right. In its attempt to address pervasive battles—along the lines of colour and class—the movie balances the melodrama with funky music and the adorable chemistry between the actors.</p>
+
+    <!-- overlapping themes -->
+    <h2>titles, tropes, and parallels</h2>
+    <p>The title <span class="film-title">Get Out</span> assumes a sense of threat or warning. The title <span class="film-title">The Hate U Give</span>, which is inspired by the concept of <em>Thug Life</em>, has a deeper meaning in pop culture. Some categorical themes which conceptually overlap are: the taboo of inter‑racial relationships, suburban racism, police brutality and the existence of fairly distinct dichotomies. While both movies are indicative of white dominance over black and black discrimination, the aspect in which they differ is that, on one hand, <span class="film-title">The Hate U Give</span> is seen as a creation of strict differences between the two communities whilst repelling the blacks; <span class="film-title">Get Out</span>, on the other, is parabolic of the notion of racial fascination and Black Fetishism.</p>
+
+    <!-- hooks quote block -->
+    <blockquote>
+        <p>“When black males have not been able to achieve in the world of sports, they have looked to the world of music as a site of possibility, a location where alternative masculinity could be expressed. Certainly the musical culture of blues and jazz had its roots in the black male quest for a vocation that would require creativity and lend meaning to one's labor.”</p>
+        <footer>— Bell Hooks, 2004, p.22</footer>
+    </blockquote>
+
+    <p>Another aspect which needs attention is the propaganda against stereotypes in the over‑all representation of blacks. In <span class="film-title">Get Out</span>, the Armitages are a cliché white family with Black servants, who in their interaction with the black boyfriend, cannot converse without reference to sports—suggestive that the only other job blacks can get, other than physical labour, is in sports, thus creating a different identity of a black sportsman. The movie <span class="film-title">The Hate U Give</span> is filled with references to songs and singers: for instance Starr says, “I am going to Beyoncé his ass.” Khalil says, “Tupac is the truth, 20 years ago even still right now.”</p>
+
+    <p>In <span class="film-title">Get Out</span>, most dialogues are evocative of what is to come. In a small get‑together hosted by the Armitage family, a guest says “black is in fashion”. As it turns out, the party was followed by a slave auction of Chris, which is literally buying a black body. “White women get you every time” says Chris's cop friend, only for Chris to find out pictures of black men and women who were deceived by his white girlfriend. McClintock, in the introduction of her book <em>Imperial Leather</em>, hypothesizes the borrowed power of colonial women (white) exercised over the colonized subject (black), breaking the strict patrilinear notion. Thus, prescribing to the idea of politics of power in the domain of race, class and gender, for gender cannot be studied in isolation of other social markers.</p>
+
+    <div class="pull-quote">
+        <i class="fas fa-lightbulb"></i> In <span class="film-title">The Hate U Give</span>, the lighting and colour of the scenes change from warm, familiar tones (Garden Heights) to washed‑out blue hues (Williamson), allegoric of the polarities between two worlds.
+    </div>
+
+    <p>The blind shootout incident by the white officer represents the symbolic power of the white man, which he enjoys without even legitimizing its presence. The sexualized representation of Khalil's grandma, Brenda, on the news crying for justice, is also indicative of politics and power. One can say that the movies are highly symbolic.</p>
+
+    <p>“This ain't about how Khalil died. It's about how Khalil lived” shouts Starr, as she faces the protestors on one side and the white armed officers on the other. Owing to the discrimination with respect to wages, leading to the lack of resources and ability to better themselves<span class="footnote-ref">10</span>, most blacks tend to turn to the available sources—thus progression towards the lines of criminality, or submission to Whiteness. Khalil forced to deal drugs, or Sekani exposed to a pistol at the age of 12, symbolizes a sense of trauma, tension, confusion and anguish in normal black youths. All of this can be conceptually linked to the notion of idleness.<span class="footnote-ref">11</span></p>
+
+    <p>In an attempt to retain the mere approval of whites, one cannot resist or dissent against the white ideal perception of blacks. The one who resists it, is killed. “The movie's unstinting vigor and empathetic but unsentimental nuance marks it as an exceptional political film.”<span class="footnote-ref">(Brody 2018)</span> Phrases like “racially flow”<span class="footnote-ref">12</span>, “move on”, “nightmares are always the worst right after” used in the context, are indicative of black internalization of the derogatory social construct. But one can, above all, still feel a sense of defiance. “Being black is an honour because we come from greatness” says the father after he reads the Ten Point Program of the Black Panther Party. Chris kills all members of the family involved in the scandal. Yet the narcissism of the whites is crudely portrayed in the movies—those who are unable to recognize the tension in the society (<span class="film-title">The Hate U Give</span>) and those who feel black people as their own commodity (<span class="film-title">Get Out</span>).</p>
+
+    <h3>black masculinity</h3>
+    <p>Another point worth mentioning is the point of Black Masculinity. “Guess, I didn't set a good example of a black man for you” says the father to his daughter after she introduces her white boyfriend to him. A man, as a macho‑man figure, the one who satisfies all the codes of masculinity—like protecting his women, family and so on—is imposed on the black male. This is evident when Maverick (Starr's father) and Seven (Starr's half‑brother) take it upon themselves to save their family.</p>
+
+    <!-- concluding paragraph -->
+    <h2>closing frames</h2>
+    <p>We began with the question of racism and how the two communities are distinct, then established the idea of 'prescribed' gender roles and hierarchy of power, then internalization of the social construct by the blacks, and we ended with black man and masculinity. Identity as a central theme, apart from oppression, that both the movies emphasized thoroughly—to that of the abstraction of identity within the body of the black subject—threads the entire discussion and highlights the cycle of damage caused by racism.</p>
+
+    <hr>
+
+    <!-- references block with footnotes / notes -->
+    <div class="ref-block">
+        <h4><i class="fas fa-book-open" style="margin-right: 8px; color:#7b614d;"></i> references & notes</h4>
+        <p>Lopez, R. (2017). Interview with Jordan Peele. <em>Los Angeles Times</em>.</p>
+        <p>Hooke, Bell. (2004). <em>We Real Cool: Black Men and Masculinity</em>. p.19, 22.</p>
+        <p>McClintock, Anne. (1995). <em>Imperial Leather: Race, Gender and Sexuality in the Colonial Contest</em>. pp.252‑253.</p>
+        <p>Brody, R. (2018). “The Hate U Give” review. <em>The New Yorker</em>.</p>
+        <p id="fn10">10 — “The Black males, whose brute labor had helped build the foundation of advanced capitalism in this society, had never been paid a living wage” (Hooke 2004, 19).</p>
+        <p id="fn11">11 — “Discourse on work—used to distinguish between desirable and undesirable labor.” See p.252‑253 (McClintock 1995).</p>
+        <p id="fn12">12 — slang for racial liquidity / code‑switching.</p>
+        <p style="margin-top: 1.2rem;">—— review originally titled “Review of the Hate you give and Get out.” formatted as a critical blog essay.</p>
+    </div>
+
+    <!-- footer line -->
+    <div style="font-family: Inter; font-size:0.85rem; color:#aa9b8e; text-align:center; margin-top:2rem; border-top:1px dashed #d6c9bd; padding-top:1.5rem;">
+        <i class="fas fa-video"></i>  get out · the hate u give  <i class="fas fa-adjust"></i>
+    </div>
+</div>
+</body>
+</html>
